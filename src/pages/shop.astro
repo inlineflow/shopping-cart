@@ -1,8 +1,29 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import { Gallery } from "src/components/react/Gallery";
+// import { Gallery } from "src/components/react/Gallery";
+import { Section } from "src/components/react/Section";
+import { SectionDataProvider } from "src/components/react/SectionContext";
+
+type CategoriesData = string[];
+const categoriesUrl = "https://fakestoreapi.com/products/categories";
+
+const fetchCategories = async () => {
+  const data = await (await fetch("https://google.com")).json();
+
+  return data;
+};
+
+const res = await fetch("https://google.com");
+const categories = await res.json();
 ---
 
 <BaseLayout>
-  <Gallery client:load />
+  <p>{categories}</p>
+  <!-- {
+    categories?.map((cat) => (
+      <SectionDataProvider categoryName={cat}>
+        <Section categoryName={cat} />
+      </SectionDataProvider>
+    ))
+  } -->
 </BaseLayout>
