@@ -1,9 +1,22 @@
 ---
+import BaseLayout from "src/layouts/BaseLayout.astro";
 import "../styles/global.css";
 ---
 
-<div class="animate-in fade-in slide-in-from-top-8 duration-500">
-  Fade in from 0% opacity,<br />
-  slide from top by 8 spacing units (2rem),<br />
-  with a 500ms duration.
-</div>
+<BaseLayout>
+  <main>
+    <p class="text-3xl mb-2">Buy our great quality products.</p>
+    <a href="/shop">
+      <p
+        class="pt-5 pb-5 pl-2.5 pr-2.5 bg-green-400 rounded-md text-center text-white text-2xl min-w-fit w-50 m-auto"
+      >
+        Shop now
+      </p></a
+    >
+  </main>
+  <!-- <div class="animate-in fade-in slide-in-from-bottom-85 duration-500">
+    Fade in from 0% opacity,<br />
+    slide from top by 8 spacing units (2rem),<br />
+    with a 500ms duration.
+  </div> -->
+</BaseLayout>

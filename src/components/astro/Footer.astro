@@ -1,0 +1,43 @@
+---
+import Youtube from "../../icons/youtube.svg";
+import Facebook from "../../icons/facebook.svg";
+import Twitter from "../../icons/twitter.svg";
+import Instagram from "../../icons/instagram.svg";
+
+const socialMedia = [
+  {
+    label: "Youtube",
+    icon: Youtube,
+  },
+  {
+    label: "Facebook",
+    icon: Facebook,
+  },
+  {
+    label: "Twitter",
+    icon: Twitter,
+  },
+  {
+    label: "Instagram",
+    icon: Instagram,
+  },
+];
+---
+
+<footer class="pt-10 pb-5 flex">
+  <div class="m-auto">
+    <p class="text-center mb-2">
+      All rights reserved &copy;. Super Shop &#8482;
+    </p>
+    <ul class="flex flex-row gap-4">
+      {
+        socialMedia.map((item) => (
+          <li class="flex flex-row gap-2">
+            {item.label}
+            <item.icon />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
