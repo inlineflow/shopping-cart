@@ -1,4 +1,5 @@
-import { Card } from "./Card";
+import { StoreItemCard } from "./StoreItemCard";
+
 import { useSectionData } from "./SectionContext";
 
 const capitalize = (str: string) => str[0]?.toUpperCase() + str.slice(1);
@@ -9,13 +10,13 @@ type Props = {
 type CardContentProps = {
   img: string;
   description: string;
-};
+} & React.ComponentProps<"div">;
 
 const CardContent = ({ img, description }: CardContentProps) => {
   return (
     <div>
-      <img src={img} />
-      <p>{description}</p>
+      <img src={img} className="max-w-64 max-h-64 m-auto" />
+      <p className="mt-10">{description}</p>
     </div>
   );
 };
@@ -31,7 +32,7 @@ export const Section = ({ categoryName }: Props) => {
       </h2>
       <div className="grid grid-cols-3 gap-5">
         {items.map((i) => (
-          <Card
+          <StoreItemCard
             // cardContent={<img src={i.image} className="w-50 m-auto"></img>}
             cardContent={
               <CardContent
@@ -41,7 +42,7 @@ export const Section = ({ categoryName }: Props) => {
             }
             title={i.title}
             // description={i.description}
-          ></Card>
+          ></StoreItemCard>
         ))}
       </div>
     </div>

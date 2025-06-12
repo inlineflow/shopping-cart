@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { StrictMode, useEffect, useState } from "react";
 // import { Card } from "src/components/react/Card";
 import { Section } from "src/components/react/Section";
 import { SectionDataProvider } from "./SectionContext";
@@ -17,19 +17,21 @@ export const Gallery = () => {
       ).json()) as CategoriesData;
 
       setCategories(data);
-      console.log(data);
+      console.log("fetched data");
     };
 
     fetchCategories();
   }, []);
 
   return (
-    <div className="p-20">
-      {categories?.map((cat) => (
-        <SectionDataProvider categoryName={cat}>
-          <Section categoryName={cat}></Section>
-        </SectionDataProvider>
-      ))}
-    </div>
+    <StrictMode>
+      <div className="p-20">
+        {categories?.map((cat) => (
+          <SectionDataProvider categoryName={cat}>
+            <Section categoryName={cat}></Section>
+          </SectionDataProvider>
+        ))}
+      </div>
+    </StrictMode>
   );
 };
