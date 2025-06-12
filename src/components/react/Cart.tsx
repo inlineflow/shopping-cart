@@ -31,6 +31,7 @@ export const Cart = ({ className }: Props) => {
           <SheetTitle>Cart</SheetTitle>
         </SheetHeader>
         <div>
+          <p>Your items: </p>
           {cartState.map((i) => (
             <p>{i.title}</p>
           ))}

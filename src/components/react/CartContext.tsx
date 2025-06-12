@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
 import type { StoreItem } from "src/types/shop";
 
+// type CartContextProps = {
+//   cartState: StoreItem[];
+//   setCartState: (oldState: StoreItem[]) => void;
+// };
+
 const Context = createContext({
   cartState: [] as StoreItem[],
   setCartState: (oldState: StoreItem[]) => {},

@@ -25,16 +25,12 @@ export const Gallery = () => {
   }, []);
 
   return (
-    <StrictMode>
-      <div className="">
-        <CartDataProvider>
-          {categories?.map((cat) => (
-            <SectionDataProvider categoryName={cat}>
-              <Section categoryName={cat}></Section>
-            </SectionDataProvider>
-          ))}
-        </CartDataProvider>
-      </div>
-    </StrictMode>
+    <div className="">
+      {categories?.map((cat) => (
+        <SectionDataProvider categoryName={cat}>
+          <Section categoryName={cat}></Section>
+        </SectionDataProvider>
+      ))}
+    </div>
   );
 };
