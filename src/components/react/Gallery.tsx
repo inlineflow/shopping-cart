@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useState } from "react";
 // import { Card } from "src/components/react/Card";
 import { Section } from "src/components/react/Section";
 import { SectionDataProvider } from "./SectionContext";
+import { CartDataProvider } from "./CartContext";
 
 type CategoriesData = string[];
 const categoriesUrl = "https://fakestoreapi.com/products/categories";
@@ -25,12 +26,14 @@ export const Gallery = () => {
 
   return (
     <StrictMode>
-      <div className="p-20">
-        {categories?.map((cat) => (
-          <SectionDataProvider categoryName={cat}>
-            <Section categoryName={cat}></Section>
-          </SectionDataProvider>
-        ))}
+      <div className="">
+        <CartDataProvider>
+          {categories?.map((cat) => (
+            <SectionDataProvider categoryName={cat}>
+              <Section categoryName={cat}></Section>
+            </SectionDataProvider>
+          ))}
+        </CartDataProvider>
       </div>
     </StrictMode>
   );

@@ -5,16 +5,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import type { StoreItem } from "src/types/shop";
 const categoriesUrl = "https://fakestoreapi.com/products/category";
-
-type StoreItem = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-};
 
 const Context = createContext([] as StoreItem[]);
 type Props = {
