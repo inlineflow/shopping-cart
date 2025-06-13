@@ -13,10 +13,10 @@ import "../styles/global.css";
     <link rel="icon" type="image/x-icon" href="/favicon.ico?" />
   </head>
   <body>
-    <div class="flex flex-col justify-between min-h-[100vh]">
-      <div class="page-body">
+    <div class="flex flex-col justify-between min-h-screen">
+      <div class="page-body flex flex-col grow">
         <Navigation />
-        <main>
+        <main class="grow">
           <slot />
         </main>
       </div>
