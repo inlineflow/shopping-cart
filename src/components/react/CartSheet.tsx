@@ -11,14 +11,11 @@ import {
   SheetDescription,
 } from "@/ui/sheet";
 import { ShoppingCart } from "lucide-react";
-import { useCartData } from "./CartContext";
+import { CartList } from "./CartList";
 
 type Props = React.ComponentProps<"div">;
 
-export const Cart = ({ className }: Props) => {
-  const { cartState } = useCartData();
-  console.log("Cart state in Cart: ", cartState);
-
+export const CartSheet = ({ className }: Props) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -26,16 +23,17 @@ export const Cart = ({ className }: Props) => {
           <ShoppingCart size={10} className="size-10" />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="min-w-200">
         <SheetHeader>
           <SheetTitle>Cart</SheetTitle>
         </SheetHeader>
-        <div>
+        <CartList></CartList>
+        {/* <div>
           <p>Your items: </p>
           {cartState.map((i) => (
             <p>{i.item.title}</p>
           ))}
-        </div>
+        </div> */}
       </SheetContent>
     </Sheet>
   );

@@ -6,7 +6,7 @@ import { NavRibbon } from "./NavRibbon";
 export const StoreShop = () => {
   return (
     <StrictMode>
-      <div className="px-20 flex flex-col items-center">
+      <div className="px-20 flex flex-col items-center mx-auto">
         <CartDataProvider>
           <NavRibbon />
           <Gallery />

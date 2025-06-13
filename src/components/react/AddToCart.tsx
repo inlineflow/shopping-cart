@@ -7,7 +7,7 @@ import { useCartData } from "./CartContext";
 type Props = {};
 
 export const AddToCart = ({}: Props) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const { cartItem } = useStoreItemData();
   const { cartState, setCartState } = useCartData();
   return (

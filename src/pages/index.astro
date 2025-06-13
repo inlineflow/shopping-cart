@@ -3,15 +3,17 @@ import BaseLayout from "src/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="m-auto text-center w-fit">
-    <p class="text-3xl mb-2">Buy our great quality products.</p>
-    <a href="/shop">
-      <p
-        class="pt-5 pb-5 pl-2.5 pr-2.5 bg-green-400 rounded-md text-center text-white text-2xl min-w-fit w-50 m-auto"
+  <div class="flex grow">
+    <section class="flex flex-col justify-center items-center grow">
+      <p class="text-3xl mb-2">Buy our great quality products.</p>
+      <a href="/shop">
+        <p
+          class="pt-5 pb-5 pl-2.5 pr-2.5 bg-green-400 rounded-md text-center text-white text-2xl min-w-fit w-50 m-auto"
+        >
+          Shop now
+        </p></a
       >
-        Shop now
-      </p></a
-    >
+    </section>
   </div>
   <!-- <div class="animate-in fade-in slide-in-from-bottom-85 duration-500">
     Fade in from 0% opacity,<br />
