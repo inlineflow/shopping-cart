@@ -33,7 +33,7 @@ export const Cart = ({ className }: Props) => {
         <div>
           <p>Your items: </p>
           {cartState.map((i) => (
-            <p>{i.title}</p>
+            <p>{i.item.title}</p>
           ))}
         </div>
       </SheetContent>

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import type { StoreItem } from "src/types/shop";
+import type { CartItem } from "src/types/shop";
 
 // type CartContextProps = {
 //   cartState: StoreItem[];
@@ -7,8 +7,8 @@ import type { StoreItem } from "src/types/shop";
 // };
 
 const Context = createContext({
-  cartState: [] as StoreItem[],
-  setCartState: (oldState: StoreItem[]) => {},
+  cartState: [] as CartItem[],
+  setCartState: (oldState: CartItem[]) => {},
 });
 type Props = {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ type Props = {
 
 export const CartDataProvider = ({ children }: Props) => {
   console.log("CartDataProvider rendering");
-  const [cartState, setCartState] = useState([] as StoreItem[]);
+  const [cartState, setCartState] = useState([] as CartItem[]);
   const value = {
     cartState,
     setCartState,

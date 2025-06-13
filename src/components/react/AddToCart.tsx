@@ -3,7 +3,7 @@ import { Input } from "@/ui/input";
 import { useState } from "react";
 
 type Props = {
-  onAddToCart: () => void;
+  onAddToCart: (amount: number) => void;
 };
 
 export const AddToCart = ({ onAddToCart }: Props) => {
@@ -39,8 +39,8 @@ export const AddToCart = ({ onAddToCart }: Props) => {
       </div>
       <Button
         onClick={() => {
-          console.log("adding");
-          onAddToCart();
+          console.log(`adding ${amount}`);
+          onAddToCart(amount);
         }}
         className="w-full mt-5"
       >

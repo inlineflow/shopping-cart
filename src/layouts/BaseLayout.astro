@@ -14,9 +14,13 @@ import "../styles/global.css";
   </head>
   <body>
     <div class="flex flex-col justify-between min-h-[100vh]">
-      <Navigation />
-      <div class="w-full">
-        <slot />
+      <div class="page-body">
+        <Navigation />
+        <div class="w-full">
+          <main>
+            <slot />
+          </main>
+        </div>
       </div>
       <Footer />
     </div>
