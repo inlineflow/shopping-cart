@@ -20,6 +20,7 @@ export const Section = ({ categoryName }: Props) => {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-fit">
         {items.map((item) => (
           <StoreItemCard
+            key={item.id}
             item={item}
             // description={i.description}
           ></StoreItemCard>

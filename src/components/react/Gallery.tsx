@@ -25,8 +25,8 @@ export const Gallery = () => {
   return (
     <div className="">
       {categories?.map((cat) => (
-        <SectionDataProvider categoryName={cat}>
-          <Section categoryName={cat}></Section>
+        <SectionDataProvider categoryName={cat} key={cat}>
+          <Section categoryName={cat} key={cat}></Section>
         </SectionDataProvider>
       ))}
     </div>
