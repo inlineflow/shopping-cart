@@ -1,8 +1,6 @@
-import { StrictMode, useEffect, useState } from "react";
-// import { Card } from "src/components/react/Card";
+import { useEffect, useState } from "react";
 import { Section } from "src/components/react/Section";
 import { SectionDataProvider } from "./SectionContext";
-import { CartDataProvider } from "./CartContext";
 
 type CategoriesData = string[];
 const categoriesUrl = "https://fakestoreapi.com/products/categories";

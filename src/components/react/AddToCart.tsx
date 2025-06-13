@@ -1,13 +1,15 @@
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { useState } from "react";
+import { useStoreItemData } from "./StoreItemCardContext";
+import { useCartData } from "./CartContext";
 
-type Props = {
-  onAddToCart: (amount: number) => void;
-};
+type Props = {};
 
-export const AddToCart = ({ onAddToCart }: Props) => {
+export const AddToCart = ({}: Props) => {
   const [amount, setAmount] = useState(0);
+  const { cartItem } = useStoreItemData();
+  const { cartState, setCartState } = useCartData();
   return (
     <div>
       <div className="flex gap-5">
@@ -39,8 +41,10 @@ export const AddToCart = ({ onAddToCart }: Props) => {
       </div>
       <Button
         onClick={() => {
-          console.log(`adding ${amount}`);
-          onAddToCart(amount);
+          setCartState([
+            ...cartState,
+            { amount: cartItem.amount + amount, item: cartItem.item },
+          ]);
         }}
         className="w-full mt-5"
       >

@@ -30,17 +30,15 @@ const CardContent = ({ img, description }: CardContentProps) => {
 
 type Props = {
   item: StoreItem;
-  cardAction: () => void;
 };
 
 type CardProps = Props & React.ComponentProps<"div">;
 
 export const StoreItemCard = ({
   item,
-  // title,
-  // cardContent,
-  cardAction,
-}: CardProps) => {
+}: // title,
+// cardContent,
+CardProps) => {
   const cartItem = { item, amount: 0 };
 
   return (
@@ -57,7 +55,7 @@ export const StoreItemCard = ({
         </BaseContent>
         <CardFooter className="mt-auto">
           <CardAction className="w-full">
-            <AddToCart onAddToCart={cardAction} />
+            <AddToCart />
           </CardAction>
         </CardFooter>
       </BaseCard>
