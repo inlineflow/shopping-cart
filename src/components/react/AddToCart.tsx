@@ -3,6 +3,7 @@ import { Input } from "@/ui/input";
 import { useState } from "react";
 import { useStoreItemData } from "./StoreItemCardContext";
 import { useCartData } from "./CartContext";
+import { makeUUID } from "src/utils/UUID";
 
 type Props = {};
 
@@ -43,7 +44,11 @@ export const AddToCart = ({}: Props) => {
         onClick={() => {
           setCartState([
             ...cartState,
-            { amount: cartItem.amount + amount, item: cartItem.item },
+            {
+              amount: cartItem.amount + amount,
+              item: cartItem.item,
+              id: makeUUID(),
+            },
           ]);
         }}
         className="w-full mt-5"

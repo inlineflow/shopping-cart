@@ -14,7 +14,7 @@ type Props = {
   item: CartItem;
 };
 
-export const Content = ({ item }: { item: CartItem }) => {
+const CartEntryContent = ({ item }: { item: CartItem }) => {
   return (
     <div className="flex gap-5">
       <img
@@ -38,7 +38,7 @@ export const CartEntry = ({ item }: Props) => {
   return (
     <BaseCard className="my-2.5">
       <BaseContent>
-        <Content item={item} />
+        <CartEntryContent item={item} />
       </BaseContent>
     </BaseCard>
   );

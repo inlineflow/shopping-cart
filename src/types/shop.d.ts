@@ -1,3 +1,5 @@
+import type { UUID } from "src/utils/UUID";
+
 export type StoreItem = {
   id: number;
   title: string;
@@ -8,6 +10,7 @@ export type StoreItem = {
 };
 
 export type CartItem = {
+  id: UUID;
   item: StoreItem;
   amount: number;
 }

@@ -8,11 +8,9 @@ import {
   CardTitle,
 } from "@/ui/card";
 import { AddToCart } from "./AddToCart";
-import {
-  StoreItemDataProvider,
-  useStoreItemData,
-} from "./StoreItemCardContext";
+import { StoreItemDataProvider } from "./StoreItemCardContext";
 import type { StoreItem } from "src/types/shop";
+import { makeUUID } from "src/utils/UUID";
 
 type CardContentProps = {
   img: string;
@@ -39,7 +37,8 @@ export const StoreItemCard = ({
 }: // title,
 // cardContent,
 CardProps) => {
-  const cartItem = { item, amount: 0 };
+  console.info("StoreItemCard render");
+  const cartItem = { item, amount: 0, id: makeUUID() };
 
   return (
     <StoreItemDataProvider item={cartItem}>
