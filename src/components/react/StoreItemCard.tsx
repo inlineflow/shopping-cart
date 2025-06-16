@@ -32,11 +32,7 @@ type Props = {
 
 type CardProps = Props & React.ComponentProps<"div">;
 
-export const StoreItemCard = ({
-  item,
-}: // title,
-// cardContent,
-CardProps) => {
+export const StoreItemCard = ({ item }: CardProps) => {
   console.info("StoreItemCard render");
   const cartItem = { item, amount: 0, id: makeUUID() };
 
@@ -52,7 +48,8 @@ CardProps) => {
             description={item.description}
           ></CardContent>
         </BaseContent>
-        <CardFooter className="mt-auto">
+        <CardFooter className="flex-col mt-auto">
+          <p className="font-bold text-xl mb-2.5">${item.price}</p>
           <CardAction className="w-full">
             <AddToCart />
           </CardAction>
