@@ -4,6 +4,7 @@ import { CartEntry } from "./CartEntry";
 import { Separator } from "@/ui/separator";
 import { Button } from "@/ui/button";
 import { SheetClose } from "@/ui/sheet";
+import { roundToTwo } from "src/utils/rounding";
 
 export const CartList = () => {
   const { cartState } = useCartData();
@@ -26,9 +27,11 @@ export const CartList = () => {
       <Separator className="" />
       <p className="text-right text-xl font-bold">
         Total: $
-        {cartState.reduce(
-          (accumulator, item) => accumulator + item.item.price * item.amount,
-          0
+        {roundToTwo(
+          cartState.reduce(
+            (accumulator, item) => accumulator + item.item.price * item.amount,
+            0
+          )
         )}
       </p>
       <div className="flex gap-10 justify-end w-full">

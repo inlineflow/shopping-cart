@@ -17,7 +17,7 @@ export const Section = ({ categoryName }: Props) => {
       <h2 className="text-2xl font-bold text-center mb-2">
         {capitalize(categoryName)}
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-fit">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-fit">
         {items.map((item) => (
           <StoreItemCard
             key={item.id}
